@@ -22,7 +22,6 @@ let SeparatorWidget = require('./widgets/SeparatorWidget');
 let GroupWidget = require('./widgets/GroupWidget');
 let NoticeWidget = require('./widgets/NoticeWidget');
 let ValidationErrorWidget = require('./widgets/ValidationErrorWidget');
-let GooglePlacesWidget = require('./widgets/GooglePlacesWidget');
 let RowWidget = require('./widgets/RowWidget');
 let LoadingWidget = require('./widgets/LoadingWidget');
 let HiddenWidget = require('./widgets/HiddenWidget');
@@ -31,24 +30,23 @@ let HiddenWidget = require('./widgets/HiddenWidget');
 
 var GiftedForm = React.createClass({
   mixins: [ContainerMixin],
-  
+
   statics: {
     TextInputWidget: TextInputWidget,
     TextAreaWidget: TextAreaWidget, 
-    SwitchWidget: SwitchWidget, 
-    SelectWidget: SelectWidget, 
-    OptionWidget: OptionWidget, 
-    SelectCountryWidget: SelectCountryWidget, 
-    DatePickerIOSWidget: DatePickerIOSWidget, 
-    DayPickerWidget: DayPickerWidget, 
-    ModalWidget: ModalWidget, 
-    SubmitWidget: SubmitWidget, 
-    SeparatorWidget: SeparatorWidget, 
-    GroupWidget: GroupWidget, 
-    NoticeWidget: NoticeWidget, 
-    GooglePlacesWidget: GooglePlacesWidget, 
-    RowWidget: RowWidget, 
-    LoadingWidget: LoadingWidget, 
+    SwitchWidget: SwitchWidget,
+    SelectWidget: SelectWidget,
+    OptionWidget: OptionWidget,
+    SelectCountryWidget: SelectCountryWidget,
+    DatePickerIOSWidget: DatePickerIOSWidget,
+    DayPickerWidget: DayPickerWidget,
+    ModalWidget: ModalWidget,
+    SubmitWidget: SubmitWidget,
+    SeparatorWidget: SeparatorWidget,
+    GroupWidget: GroupWidget,
+    NoticeWidget: NoticeWidget,
+    RowWidget: RowWidget,
+    LoadingWidget: LoadingWidget,
     HiddenWidget: HiddenWidget,
   },
 
@@ -56,7 +54,7 @@ var GiftedForm = React.createClass({
     return {
       isModal: false,
       clearOnClose: false,
-      
+
       validators: {},
       defaults: {},
       openModal: null,
@@ -66,18 +64,18 @@ var GiftedForm = React.createClass({
   propTypes: {
     isModal: React.PropTypes.bool,
     clearOnClose: React.PropTypes.bool,
-    
+
     validators: React.PropTypes.object,
     defaults: React.PropTypes.object,
     openModal: React.PropTypes.func,
   },
-  
+
   componentWillUnmount() {
     if (this.props.clearOnClose === true) {
       GiftedFormManager.reset(this.props.formName);
     }
   },
-  
+
   componentWillMount() {
     // register validators
     for (var key in this.props.validators) {
@@ -85,7 +83,7 @@ var GiftedForm = React.createClass({
         GiftedFormManager.setValidators(this.props.formName, key, this.props.validators[key]);
       }
     }
-    
+
     // register defaults values
     for (var key in this.props.defaults) {
       if (this.props.defaults.hasOwnProperty(key)) {
@@ -95,7 +93,7 @@ var GiftedForm = React.createClass({
       }
     }
   },
-  
+
   render() {
     return this._renderContainerView();
   },
@@ -103,17 +101,17 @@ var GiftedForm = React.createClass({
 
 var GiftedFormModal = React.createClass({
   mixins: [ContainerMixin],
-  
+
   getDefaultProps() {
     return {
       isModal: true,
     }
   },
-  
+
   propTypes: {
     isModal: React.PropTypes.bool,
   },
-  
+
   render() {
     return this._renderContainerView()
   },
@@ -123,5 +121,5 @@ var GiftedFormModal = React.createClass({
 
 module.exports = {
   GiftedForm, GiftedFormModal, GiftedFormManager,
-  WidgetMixin, 
+  WidgetMixin,
 };
