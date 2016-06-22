@@ -1,11 +1,11 @@
-var React = require('react-native');
-var {
+import React from 'react';
+import {
   View,
   Text,
   TouchableHighlight,
   Image,
   PixelRatio
-} = React;
+} from 'react-native';
 
 var WidgetMixin = require('../mixins/WidgetMixin.js');
 

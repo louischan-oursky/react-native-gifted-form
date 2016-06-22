@@ -1,6 +1,6 @@
 'use strict';
 
-var React = require('react-native');
+import React from 'react';
 
 
 let GiftedFormManager = require('./GiftedFormManager');
@@ -8,23 +8,8 @@ let GiftedFormManager = require('./GiftedFormManager');
 let ContainerMixin = require('./mixins/ContainerMixin');
 let WidgetMixin = require('./mixins/WidgetMixin');
 
-let TextInputWidget = require('./widgets/TextInputWidget');
-let TextAreaWidget = require('./widgets/TextAreaWidget');
-let SwitchWidget = require('./widgets/SwitchWidget');
 let SelectWidget = require('./widgets/SelectWidget');
 let OptionWidget = require('./widgets/OptionWidget');
-let SelectCountryWidget = require('./widgets/SelectCountryWidget');
-let DayPickerWidget = require('./widgets/DayPickerWidget');
-let DatePickerIOSWidget = require('./widgets/DatePickerIOSWidget');
-let ModalWidget = require('./widgets/ModalWidget');
-let SubmitWidget = require('./widgets/SubmitWidget');
-let SeparatorWidget = require('./widgets/SeparatorWidget');
-let GroupWidget = require('./widgets/GroupWidget');
-let NoticeWidget = require('./widgets/NoticeWidget');
-let ValidationErrorWidget = require('./widgets/ValidationErrorWidget');
-let RowWidget = require('./widgets/RowWidget');
-let LoadingWidget = require('./widgets/LoadingWidget');
-let HiddenWidget = require('./widgets/HiddenWidget');
 
 // @todo disable a field
 
@@ -32,22 +17,8 @@ var GiftedForm = React.createClass({
   mixins: [ContainerMixin],
 
   statics: {
-    TextInputWidget: TextInputWidget,
-    TextAreaWidget: TextAreaWidget, 
-    SwitchWidget: SwitchWidget,
     SelectWidget: SelectWidget,
     OptionWidget: OptionWidget,
-    SelectCountryWidget: SelectCountryWidget,
-    DatePickerIOSWidget: DatePickerIOSWidget,
-    DayPickerWidget: DayPickerWidget,
-    ModalWidget: ModalWidget,
-    SubmitWidget: SubmitWidget,
-    SeparatorWidget: SeparatorWidget,
-    GroupWidget: GroupWidget,
-    NoticeWidget: NoticeWidget,
-    RowWidget: RowWidget,
-    LoadingWidget: LoadingWidget,
-    HiddenWidget: HiddenWidget,
   },
 
   getDefaultProps() {

@@ -1,7 +1,7 @@
-var React = require('react-native');
-var {
+import React from 'react';
+import {
   Image  
-} = React;
+} from 'react-native';
 
 
 var GiftedFormManager = require('../GiftedFormManager');

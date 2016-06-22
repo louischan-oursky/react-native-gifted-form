@@ -1,11 +1,10 @@
-var React = require('react-native');
-
-var {
+import React from 'react';
+import {
   ScrollView,
   View,
   Platform,
   Dimensions
-} = React;
+} from 'react-native';
 
 var GiftedFormManager = require('../GiftedFormManager');
 
